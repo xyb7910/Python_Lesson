@@ -1,7 +1,7 @@
 """
 author : Yan Peng Bo
 Date: 2023-5-21
-content: list_demo project
+content: list_demo01 project
 """
 animals_list = ['dog', 'cat', 'duck', 'eagle', 'dove', 'fish', 'fish', 'deer']
 
@@ -78,6 +78,22 @@ animals_list.reverse()
 print("反转后列表的第一个元素是：", animals_list[0])
 print("反转后列表的最后一个元素是：", animals_list[len(animals_list) - 1])
 
+# del list_name[index]
+print("---------------当前列表中元素---------------")
+for i in animals_list:
+    print(i, end=" ")
+print()
+print("-----------------------------------------")
+
+del animals_list[0]
+del animals_list[-1]
+# 超域是报异常
+# del animals_list[50]
+
+print("---------------当前列表中元素---------------")
+for i in animals_list:
+    print(i, end=" ")
+print()
 print("-----------------------------------------")
 
 # clear() 删除列表里的所有元素，相当于 del a[:]
