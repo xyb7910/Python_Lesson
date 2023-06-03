@@ -3,6 +3,8 @@ author : Yan Peng Bo
 Date: 2023-5-12
 content: function project
 """
+
+
 def fib(n):
     # 斐波那契数列
     a, b = 0, 1
@@ -10,6 +12,7 @@ def fib(n):
         print(a, end=' ')
         a, b = b, a + b
     print()
+
 
 def fib2(n):
     result = []
@@ -19,12 +22,15 @@ def fib2(n):
         a, b = b, a + b
     return result
 
+
 """
 ans = fib2(2000)
 for x in ans:
     print(x, end=' ')
 """
-def ask_ok(prompt, retries = 4, reminder = 'Please try again!'):
+
+
+def ask_ok(prompt, retries=4, reminder='Please try again!'):
     while True:
         ok = input(prompt)
         if ok in ('y', 'ye', 'yes'):
@@ -35,9 +41,3 @@ def ask_ok(prompt, retries = 4, reminder = 'Please try again!'):
         if retries < 0:
             raise ValueError('invalid user response')
         print(reminder)
-
-
-
-
-
-
