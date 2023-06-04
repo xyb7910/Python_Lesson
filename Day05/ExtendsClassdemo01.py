@@ -1,7 +1,7 @@
 """
 author : Yan Peng Bo
 Date: 2023-6-4
-content: extends_class_demo project
+content: extends_class_demo_01 project
 """
 
 """
