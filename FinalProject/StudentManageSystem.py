@@ -4,6 +4,7 @@ Date: 2023-6-8
 content: student_manage_system project
 """
 import csv
+import re
 
 
 # 学生类
@@ -114,6 +115,7 @@ class StudentManagementSystem:
 
     def show_menu(self):
         while True:
+            # 功能选择界面
             print("\n欢迎使用学员管理系统")
             print("1. 增加学员信息")
             print("2. 删除学员信息")
@@ -124,11 +126,37 @@ class StudentManagementSystem:
             choice = input("请输入功能编号：\n")
 
             if choice == "1":
-                student_id = input("请输入学号：")
-                name = input("请输入姓名：")
-                age = input("请输入年龄：")
-                gender = input("请输入性别：")
-                contact = input("请输入联系方式：")
+                # 优化版输入
+                # 输入学号，学号必须为长度为5位的数字
+                student_id = input("请输入学号（必须为5位）：")
+                while not re.match(r'^\d{5}$', student_id):
+                    print("学号格式不正确，请重新输入。")
+                    student_id = input("请输入学号：")
+
+                # 输入姓名，要求姓名必须为中文😯
+                name = input("请输入姓名（必须为中文）：")
+                while not re.match(r'^[\u4e00-\u9fa5]+$', name):
+                    print("姓名格式不正确，请重新输入。")
+                    name = input("请输入姓名：")
+
+                # 输入年龄，要求年龄必须数字😯
+                age = input("请输入年龄（必须为数字）：")
+                while not age.isdigit():
+                    print("年龄必须为数字，请重新输入。")
+                    age = input("请输入年龄：")
+
+                # 输入性别，必须为男或者女
+                gender = input("请输入性别（必须为男or女）：")
+                while gender not in ['男', '女']:
+                    print("性别输入不正确，请重新输入。")
+                    gender = input("请输入性别：")
+
+                # 输入联系方式，联系方式必须为长度为12的数字
+                contact = input("请输入联系方式（必须为11位）：")
+                while not re.match(r'^\d{11}$', contact):
+                    print("联系方式格式不正确，请重新输入。")
+                    contact = input("请输入联系方式：")
+
                 student = Student(student_id, name, age, gender, contact)
                 self.add_student(student)
             elif choice == "2":
