@@ -40,7 +40,7 @@ class StudentManagementSystem:
         print("找不到该学员信息！")
 
     # 修改学员信息
-    def modify_student(self, student_id, **kwargs):
+    def modify_student(self, student_id, **kwargs):  # ** 将参数以字典的形式导入
         for student in self.students:
             if student.student_id == student_id:
                 print("找到以下学员信息：")
@@ -60,7 +60,7 @@ class StudentManagementSystem:
         print("找不到该学员信息！")
 
     # 通过学员姓名进行模糊查询
-    def query_student_name(self, *keywords):
+    def query_student_name(self, *keywords):  # * 将所有参数以元组的形式导入
         results = []
         for student in self.students:
             match = True
