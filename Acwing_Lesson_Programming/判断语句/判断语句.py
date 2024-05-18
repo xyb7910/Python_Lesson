@@ -2,6 +2,7 @@
 acwing python 基础课
 第二章题目
 """
+import math
 
 # 倍数
 '''
@@ -148,3 +149,155 @@ elif x <= 75:
 else:
     print("Intervalo (75,100]")
 '''
+
+# 点的坐标
+'''
+x, y = map(float, input().split())
+if x > 0 and y > 0:
+    print("Q1")
+elif x > 0 > y:
+    print("Q4")
+elif x < 0 and y < 0:
+    print("Q3")
+elif x < 0 < y:
+    print("Q2")
+elif x == 0 and y != 0:
+    print("Eixo Y")
+elif y == 0 and x != 0:
+    print("Eixo X")
+else:
+    print("Origem")
+'''
+
+# 税
+'''
+salary = float(input())
+tax = 0
+if salary > 4500:
+    tax += (salary - 4500) * 0.28
+    salary = 4500
+if 3000 < salary <= 4500:
+    tax += (salary - 3000) * 0.18
+    salary = 3000
+if 2000 < salary <= 3000:
+    tax += (salary - 2000) * 0.08
+    salary = 2000
+else:
+    tax += 0
+
+if tax == 0:
+    print("Isento")
+else:
+    print("R$ %.2f" % tax)
+'''
+
+# 游戏时间2
+'''
+start_hour, start_minus, end_hour, end_minus = map(int, input().split())
+
+# 根据秒数去判断是否为同一天
+begin = start_hour * 60 + start_minus
+end = end_hour * 60 + end_minus
+
+if begin < end:
+    total = end - begin
+else:
+    total = 24 * 60 - begin + end
+
+hours = total // 60
+minus = total % 60
+
+print("O JOGO DUROU %d HORA(S) E %d MINUTO(S)" % (hours, minus))
+'''
+
+# 一元二次方程公式
+'''
+from math import sqrt
+
+a, b, c = map(float, input().split())
+x1, x2 = 0, 0
+delta = b ** 2 - 4 * a * c
+if delta < 0 or a == 0:
+    print("Impossivel calcular")
+else:
+    x1 = (-b + sqrt(delta)) / (2 * a)
+    x2 = (-b - sqrt(delta)) / (2 * a)
+print('R1 = %.5f' % x1)
+print('R2 = %.5f' % x2)
+'''
+
+# 三角形类型
+'''
+a, b, c = map(float, input().split())
+
+if a < b:
+    a, b = b, a
+if a < c:
+    a, c = c, a
+if b < c:
+    b, c = c, b
+he = b ** 2 + c ** 2
+A = a ** 2
+if a >= b + c:
+    print("NAO FORMA TRIANGULO")
+else:
+    if A == he:
+        print("TRIANGULO RETANGULO")
+    if A > he:
+        print("TRIANGULO OBTUSANGULO")
+    if A < he:
+        print("TRIANGULO ACUTANGULO")
+    if a == b == c:
+        print("TRIANGULO EQUILATERO")
+    if a == b != c or b == c != a or c == a != b:
+        print("TRIANGULO ISOSCELES")
+'''
+
+# 动物
+'''
+a = input()
+b = input()
+c = input()
+
+if a == "vertebrado":
+    if b == "ave":
+        if c == "carnivoro":
+            print("aguia")
+        else:
+            print("pomba")
+    else:
+        if c == "onivoro":
+            print("homem")
+        else:
+            print("vaca")
+else:
+    if b == "inseto":
+        if c == "hematofago":
+            print("pulga")
+        else:
+            print("lagarta")
+    else:
+        if (c == "hematofago"):
+            print("sanguessuga")
+        else:
+            print("minhoca")
+'''
+
+# 平均数3
+a, b, c, d = map(float, input().split())
+x = (a * 2 + b * 3 + c * 4 + d) / 10
+print("Media: %.1f" % x)
+if x >= 7.0:
+    print("Aluno aprovado.")
+elif x < 5.0:
+    print("Aluno reprovado.")
+else:
+    print("Aluno em exame.")
+    y = float(input())
+    print("Nota do exame: %.1f" % y)
+    z = (x + y) / 2
+    if z >= 5.0:
+        print("Aluno aprovado.")
+    else:
+        print("Aluno reprovado.")
+    print("Media final: %.1f" % z)
