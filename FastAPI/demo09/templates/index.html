@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统主页面</title>
+    <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+<h1>用户名为：{{username}}</h1>
+<h1>用户年龄为：{{age}}</h1>
+<h1><a href="{{ url_for('read_item', id=id) }}">Item ID: {{ id }}</a></h1>
+<a href="{{ url_for('read_item', id=id) }}">
+
+</body>
+</html>
