@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Filters Example</title>
+</head>
+<body>
+    <h1>Hello, {{ name|capitalize }}!</h1>
+    <p>Your name in lower case is {{ name|lower }}.</p>
+    <p>Your name in upper case is {{ name|upper }}.</p>
+    <p>Your age is {{ age | abs }}.</p>
+    <p>Your description is:{{ desc | default('不填写简介，默认你是傻der') }}</p>
+    {#  第二种写法为 or  #}
+{#    <p>Your description is:{{ desc or '不填写简介，默认你是傻der'}}</p>#}
+    <p>使用文本裁剪过滤器{{ message | cut_ut }}</p>
+{#    <p>这篇文章发布于 {{ time| time_filter }}。</p>#}
+    {# 学习如何使用 for 循环#}
+    {#  第一种：  #}
+    <p>第一种方式 for 遍历</p>
+    {% for element in articles %}
+        <li>你所编写的文章内容为{{ element }}</li>
+    {% endfor %}
+    <hr>
+    <p>第二种方式 for 遍历</p>
+    {% for k, v in my_dict %}
+        <li>你所编写的文章的序号为{{ k }}</li>
+        <li>你所编写的文章的内容为{{ v }}</li>
+    {% endfor %}
+    {# 使用if #}
+    {% if grade > 15 %}
+        <p>获取到的性名为{{ name }}</p>
+    {% endif %}
+    {% if articles %}
+        {% for ele in articles %}
+            <p>文章为：{{ ele }}</p>
+        {% endfor %}
+    {% else %}
+        <p>grade不符合方案设计</p>
+    {% endif %}
+</body>
+</html>

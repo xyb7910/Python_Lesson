@@ -144,39 +144,6 @@ def profile():
 3. 指定 `app.response_class` 为自定义的 `Response` 对象
 '''
 
-
-class JSONResponse(Response):
-    @classmethod
-    def force_type(cls, rv, environ=None):
-        if isinstance(rv, dict):
-            # 是字典类型在进行操作
-            res = jsonify(rv)
-        else:
-            # 如果不是字典类型，我们可以直接使用rv
-            res = rv
-        return super(JSONResponse, cls).force_type(res, environ)
-
-
-app.response_class = JSONResponse
-
-
-@app.route('/send_json/')
-def send_json():
-    return {'username': request.args.get('username'), 'password': request.args.get('password')}
-
-
-# add_url_rule 与 route 的等价写法
-@app.route('/test_add_url_rule/')
-def test_add_url_rule():
-    return "这是测试 `add_url_rule()`"
-
-
-def test_add_url_rule2():
-    return "这是测试 `add_url_rule()`"
-
-
-app.add_url_rule("/add_url_rule/", endpoint='aur', view_func=test_add_url_rule2)
-
 if __name__ == '__main__':
     app.run()
     # app.run(debug=True)
