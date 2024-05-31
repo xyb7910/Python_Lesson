@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+.form-container h2 {
+    text-align: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-top: 10px;
+}
+
+.form-container input {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.form-container button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    opacity: 0.8;
+}
