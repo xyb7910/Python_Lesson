@@ -1,8 +1,7 @@
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.ext.declarative import declarative_base
 
-from SqlAIchemy.LinkDB.main import engine
-
+from SqlAlchemy.LinkDB.main import engine
 
 Base = declarative_base()
 
@@ -17,7 +16,6 @@ class User(Base):
     # 重写 __repr__ 实现打印数据库数据
     def __repr__(self):
         return f"<User(name={self.name}, age={self.age})>"
-
 
 
 # 建立与数据库的映射

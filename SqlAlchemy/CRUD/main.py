@@ -1,7 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 
-from SqlAIchemy.LinkDB.main import engine
-from SqlAIchemy.Model.main import User
+from SqlAlchemy.LinkDB.main import engine
+from SqlAlchemy.Model.main import User
 
 # 构建 session 对象
 session = sessionmaker(bind=engine)()
@@ -28,9 +28,9 @@ p3 = User(name='yxc', age=22)
 #     print(user)
 '''
     print(user) 输出的内容：
-    <SqlAIchemy.Model.main.User object at 0x104b1c2e0>
-    <SqlAIchemy.Model.main.User object at 0x104b1c340>
-    <SqlAIchemy.Model.main.User object at 0x104b1c220>
+    <SqlAlchemy.Model.main.User object at 0x104b1c2e0>
+    <SqlAlchemy.Model.main.User object at 0x104b1c340>
+    <SqlAlchemy.Model.main.User object at 0x104b1c220>
 '''
 # filter_by 进行条件查询
 # all_users = session.query(User).filter_by(age=18).all()
