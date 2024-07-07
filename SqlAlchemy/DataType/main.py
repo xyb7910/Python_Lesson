@@ -47,7 +47,7 @@ class News(Base):
 
 # 建立映射
 Base.metadata.create_all(engine)
-
+# Base.metadata.drop_all(engine)
 # 新建一个会话对象
 session = sessionmaker(bind=engine)()
 

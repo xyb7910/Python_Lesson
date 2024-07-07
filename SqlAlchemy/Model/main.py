@@ -19,7 +19,7 @@ class User(Base):
 
 
 # 建立与数据库的映射
-Base.metadata.create_all(engine)
+# Base.metadata.create_all(engine)
 
 # 删除与数据库的映射
-# Base.metadata.drop_all(engine)
+Base.metadata.drop_all(engine)
